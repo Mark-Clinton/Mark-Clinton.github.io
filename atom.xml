@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-07-31T01:22:03.706Z</updated>
+  <updated>2022-07-31T03:09:53.946Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>更换主题</title>
+    <link href="http://example.com/2022/07/31/%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/"/>
+    <id>http://example.com/2022/07/31/%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/</id>
+    <published>2022-07-31T03:08:51.000Z</published>
+    <updated>2022-07-31T03:09:53.946Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><h3 id="部署到github"><a href="#部署到github" class="headerlink" title="部署到github"></a>部署到github</h3><p>测试github actions</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;更换主题&quot;&gt;&lt;a href=&quot;#更换主题&quot; class=&quot;headerlink&quot; title=&quot;更换主题&quot;&gt;&lt;/a&gt;更换主题&lt;/h2&gt;&lt;h3 id=&quot;部署到github&quot;&gt;&lt;a href=&quot;#部署到github&quot; class=&quot;headerlink&quot; title=</summary>
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="http://example.com/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>修改博客token</title>
