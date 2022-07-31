@@ -17,16 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>标签: hexo | Hexo</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/hexo/index.html">
+  <title>PyTorch环境搭建 | Hexo</title>
+  <meta name="description" content="1. 安装anaconda前往Anaconda官网下载个人版(Individual Edition)： 官网地址 2. 添加清华镜像源由于PyTorch的服务器在国外，直连下载的话很慢，所以选用清华镜像源下载，步骤如下：  点击开始菜单，进入Anaconda Prompt命令行 在命令行中输入以下命令  12345678# 添加清华镜像conda config --add channels htt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PyTorch环境搭建">
+<meta property="og:url" content="http://example.com/2022/07/31/PyTorch%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 安装anaconda前往Anaconda官网下载个人版(Individual Edition)： 官网地址 2. 添加清华镜像源由于PyTorch的服务器在国外，直连下载的话很慢，所以选用清华镜像源下载，步骤如下：  点击开始菜单，进入Anaconda Prompt命令行 在命令行中输入以下命令  12345678# 添加清华镜像conda config --add channels htt">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-07-31T10:59:15.000Z">
+<meta property="article:modified_time" content="2022-07-31T11:01:31.441Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="PyTorch">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/tags/hexo/index.html">
+  <link rel="canonical" href="http://example.com/2022/07/31/PyTorch%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -340,58 +345,206 @@
 </aside>
 
   
-  <main class="main" role="main">
-  <article class="content article article-tags post-type-list" itemscope="">
-    <header class="article-header">
-      <h1 itemprop="name" class="hidden-xs">标签: hexo</h1>
-      <p class="text-muted hidden-xs">共 1 篇文章</p>
-      <nav role="navigation" id="nav-main" class="okayNav">
-        <ul>
-          <li><a href="/tags">All</a></li>
-          
-          <li><a href="/tags/PyTorch/">PyTorch</a></li>
-          
-          <li><a href="/tags/测试/">测试</a></li>
-          
-          <li><a href="/tags/GitHub-Actions/">GitHub Actions</a></li>
-          
-          <li><a href="/tags/hexo/">hexo</a></li>
-          
-        </ul>
-      </nav>
-    </header>
-    <!-- /header -->
-    <div class="article-body">
-      <div class="row">
-        
-<div class="col-md-6">
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-PyTorch环境搭建" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="panel-body">
-     <div class="article-meta">
-       <time datetime="2022-07-31T03:08:51.000Z" itemprop="datePublished">2022-07-31</time>
-     </div>
-     <h3 class="article-title" itemprop="name">
-       <a class="article-link" href="/2022/07/31/%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/">更换主题</a>
-     </h3>
-   </div>
-   
-   <div class="panel-footer">
-     
-      <a href="/tags/hexo/" class="label label-default mb">hexo</a>
-     
-     
-   </div>
-   
-</article>
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PyTorch环境搭建
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/07/31/PyTorch%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
+	  <time datetime="2022-07-31T10:59:15.000Z" itemprop="datePublished">2022-07-31</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/PyTorch/" rel="tag">PyTorch</a>
+  </span>
 
 
-</div>
+        
 
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/31/PyTorch%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#comments" class="article-comment-link">评论</a></span>
+        
       </div>
     </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="1-安装anaconda"><a href="#1-安装anaconda" class="headerlink" title="1. 安装anaconda"></a>1. 安装anaconda</h3><p>前往Anaconda官网下载个人版(Individual Edition)：</p>
+<p><a target="_blank" rel="noopener" href="https://www.anaconda.com/products/individual">官网地址</a></p>
+<h3 id="2-添加清华镜像源"><a href="#2-添加清华镜像源" class="headerlink" title="2. 添加清华镜像源"></a>2. 添加清华镜像源</h3><p>由于PyTorch的服务器在国外，直连下载的话很慢，所以选用清华镜像源下载，步骤如下：</p>
+<ol>
+<li>点击开始菜单，进入Anaconda Prompt命令行</li>
+<li>在命令行中输入以下命令</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加清华镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line"><span class="comment"># 添加pytorch镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line"><span class="comment"># for legacy win-64</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/peterjc123/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-创建新的conda虚拟环境"><a href="#3-创建新的conda虚拟环境" class="headerlink" title="3. 创建新的conda虚拟环境"></a>3. 创建新的conda虚拟环境</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其中pytorch为虚拟环境名称，可自定义。后面指定安装的python版本</span></span><br><span class="line">conda create --name pytorch python=<span class="number">3.8</span></span><br><span class="line"><span class="comment"># 激活 进入新环境</span></span><br><span class="line">activate pytorch</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-安装PyTorch"><a href="#4-安装PyTorch" class="headerlink" title="4. 安装PyTorch"></a>4. 安装PyTorch</h3><p>可先去官网选择合适的命令，粘贴至Anaconda Prompt命令行运行：</p>
+<p><a target="_blank" rel="noopener" href="https://pytorch.org/">官网地址</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision cudatoolkit=<span class="number">10.2</span></span><br></pre></td></tr></table></figure>
+
+<p>这里比官网的命令少了一个<code>-c pytorch</code>。<br>主要是因为<code>-c pytorch</code>表示指定使用pytorch channel，这个服务器位于国外，下载速度很慢，使用刚刚添加进default channel的清华镜像源可以得到一个较快的下载速度。</p>
+<h5 id="验证是否安装成功"><a href="#验证是否安装成功" class="headerlink" title="验证是否安装成功"></a>验证是否安装成功</h5><p>在Python编译环境下输入代码并运行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import torch </span><br><span class="line">import torchvision</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-配置Pycharm"><a href="#5-配置Pycharm" class="headerlink" title="5. 配置Pycharm"></a>5. 配置Pycharm</h3><h4 id="5-1-安装Pycharm"><a href="#5-1-安装Pycharm" class="headerlink" title="5.1 安装Pycharm"></a>5.1 安装Pycharm</h4><p>前往Pycharm官网下载需要的版本，然后安装：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/download/">官网地址</a></p>
+<h4 id="5-2-设置Python-Interpreter"><a href="#5-2-设置Python-Interpreter" class="headerlink" title="5.2 设置Python Interpreter"></a>5.2 设置Python Interpreter</h4><ol>
+<li>在主界面菜单File-&gt;Setting-&gt;Project:xxxx-&gt;Python Interpreter。</li>
+<li><code>Settings</code>界面，点击<code>齿轮</code>按钮，选择<code>Add</code>，会弹出添加界面。</li>
+<li>在添加界面左侧选择<code>Conda Environment</code>，右边选择<code>Existing environment</code>。</li>
+<li>再点击<code>...</code>按钮添加一个已经存在的<code>conda</code>虚拟环境，即刚刚构建的<code>pytorch</code>。</li>
+<li>选择<strong>Anaconda-&gt;envs-&gt;pytorch（刚刚创建的conda虚拟环境）-&gt;python.exe</strong>作为解释器。</li>
+<li>注意计算机中必须安装有VC执行环境，即：Microsoft Visual C++ 2015-2019 Redistributable(x64)。</li>
+</ol>
+<p>最后，PyTorch在Pycharm的环境就搭建完成了。</p>
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2022/07/31/PyTorch%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="PyTorch环境搭建" target="_blank" rel="external">http://example.com/2022/07/31/PyTorch环境搭建/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/Mark-Clinton" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/Mark-Clinton" target="_blank"><span class="text-dark">Mark Clinton</span><small class="ml-1x">Web Developer &amp; CV</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
   </article>
-   
+  
+    
+  <section id="comments">
+  	
+      <div id="vcomments"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/07/31/hello-world/" title="Hello World"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/07/31/%E4%BF%AE%E6%94%B9%E4%B8%BB%E9%A2%98%E4%BF%A1%E6%81%AF/" title="修改主题信息"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -453,6 +606,37 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 
 
 
+
+   
+
+
+
+
+   
+    
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = 'nick,mail,link';
+  meta = meta.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#vcomments',
+    verify: false,
+    notify: false,
+    appId: '',
+    appKey: '',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: meta,
+    pageSize: '10' || 10,
+    visitor: false
+  });
+  </script>
+
+     
 
 
 
