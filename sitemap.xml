@@ -2,15 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://mark-clinton.github.io/tags/index.html</loc>
-    
-    <lastmod>2022-08-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mark-clinton.github.io/2022/07/31/PyTorch%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
     
     <lastmod>2022-08-02</lastmod>
@@ -111,6 +102,15 @@
   
   <url>
     <loc>https://mark-clinton.github.io/repository/index.html</loc>
+    
+    <lastmod>2022-08-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mark-clinton.github.io/tags/index.html</loc>
     
     <lastmod>2022-08-02</lastmod>
     
