@@ -38,16 +38,7 @@
   </url>
   
   <url>
-    <loc>https://mark-clinton.github.io/404.html</loc>
-    
-    <lastmod>2022-10-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mark-clinton.github.io/about/index.html</loc>
+    <loc>https://mark-clinton.github.io/2022/10/06/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</loc>
     
     <lastmod>2022-10-18</lastmod>
     
@@ -66,6 +57,15 @@
   
   <url>
     <loc>https://mark-clinton.github.io/categories/index.html</loc>
+    
+    <lastmod>2022-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mark-clinton.github.io/about/index.html</loc>
     
     <lastmod>2022-10-18</lastmod>
     
@@ -100,6 +100,15 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://mark-clinton.github.io/404.html</loc>
+    
+    <lastmod>2022-10-18</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   <url>
     <loc>https://mark-clinton.github.io/</loc>
@@ -125,6 +134,13 @@
   
   <url>
     <loc>https://mark-clinton.github.io/tags/PyTorch/</loc>
+    <lastmod>2022-10-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://mark-clinton.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/</loc>
     <lastmod>2022-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

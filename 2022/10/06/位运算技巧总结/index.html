@@ -17,21 +17,21 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>PyTorch环境搭建 | Mark Clinton</title>
-  <meta name="description" content="1. 安装anaconda 前往Anaconda官网下载个人版(Individual Edition)： 官网地址  2. 添加清华镜像源 由于PyTorch的服务器在国外，直连下载的话很慢，所以选用清华镜像源下载，步骤如下：  点击开始菜单，进入Anaconda Prompt命令行 在命令行中输入以下命令  12345678# 添加清华镜像conda config --add channels">
+  <title>位运算技巧总结 | Mark Clinton</title>
+  <meta name="description" content="1.基础运算 位运算的基础运算主要包括左移、右移、无符号右移、按位与、按位或、按位异或、按位非和赋值操作等。  左移(&lt;&lt;)：无论是正数或者负数左移，均在最右侧补0 右移(&gt;&gt;)：正数右移左侧补0，负数右移左侧补1 无符号右移(&gt;&gt;&gt;)：无论是正数或者负数进行无符号右移，均在左侧补0 按位与(&amp;)：两个二进制位进行按位与操作时，两个二进制位都为1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PyTorch环境搭建">
-<meta property="og:url" content="https://mark-clinton.github.io/2022/07/31/PyTorch%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:title" content="位运算技巧总结">
+<meta property="og:url" content="https://mark-clinton.github.io/2022/10/06/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Mark Clinton">
-<meta property="og:description" content="1. 安装anaconda 前往Anaconda官网下载个人版(Individual Edition)： 官网地址  2. 添加清华镜像源 由于PyTorch的服务器在国外，直连下载的话很慢，所以选用清华镜像源下载，步骤如下：  点击开始菜单，进入Anaconda Prompt命令行 在命令行中输入以下命令  12345678# 添加清华镜像conda config --add channels">
+<meta property="og:description" content="1.基础运算 位运算的基础运算主要包括左移、右移、无符号右移、按位与、按位或、按位异或、按位非和赋值操作等。  左移(&lt;&lt;)：无论是正数或者负数左移，均在最右侧补0 右移(&gt;&gt;)：正数右移左侧补0，负数右移左侧补1 无符号右移(&gt;&gt;&gt;)：无论是正数或者负数进行无符号右移，均在左侧补0 按位与(&amp;)：两个二进制位进行按位与操作时，两个二进制位都为1">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-31T10:59:15.000Z">
+<meta property="article:published_time" content="2022-10-06T01:59:27.000Z">
 <meta property="article:modified_time" content="2022-10-18T02:05:05.070Z">
 <meta property="article:author" content="Mark Clinton">
-<meta property="article:tag" content="PyTorch">
+<meta property="article:tag" content="位运算">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="https://mark-clinton.github.io/2022/07/31/PyTorch%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
+  <link rel="canonical" href="https://mark-clinton.github.io/2022/10/06/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/index.html">
   
     <link rel="alternate" href="/atom.xml" title="Mark Clinton" type="application/atom+xml">
   
@@ -348,7 +348,7 @@
   <div class="slimContent">
     <nav id="toc" class="article-toc">
       <h3 class="toc-title">文章目录</h3>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85anaconda"><span class="toc-text"> 1. 安装anaconda</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%B7%BB%E5%8A%A0%E6%B8%85%E5%8D%8E%E9%95%9C%E5%83%8F%E6%BA%90"><span class="toc-text"> 2. 添加清华镜像源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9A%84conda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-text"> 3. 创建新的conda虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85pytorch"><span class="toc-text"> 4. 安装PyTorch</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F"><span class="toc-text"> 验证是否安装成功</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%85%8D%E7%BD%AEpycharm"><span class="toc-text"> 5. 配置Pycharm</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#51-%E5%AE%89%E8%A3%85pycharm"><span class="toc-text"> 5.1 安装Pycharm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#52-%E8%AE%BE%E7%BD%AEpython-interpreter"><span class="toc-text"> 5.2 设置Python Interpreter</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E5%9F%BA%E7%A1%80%E8%BF%90%E7%AE%97"><span class="toc-text"> 1.基础运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E6%9C%89%E8%B6%A3%E7%9A%84%E4%BD%8D%E8%BF%90%E7%AE%97%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="toc-text"> 2.有趣的位运算小技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E7%AE%97%E6%B3%95%E4%B8%AD%E5%B8%B8%E7%94%A8%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="toc-text"> 3.算法中常用位运算</span></a></li></ol>
     </nav>
   </div>
 </aside>
@@ -356,14 +356,14 @@
 
 <main class="main" role="main">
   <div class="content">
-  <article id="post-PyTorch环境搭建" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-位运算技巧总结" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      PyTorch环境搭建
+      位运算技巧总结
     </h1>
   
 
@@ -371,73 +371,83 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2022/07/31/PyTorch%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="article-date">
-	  <time datetime="2022-07-31T10:59:15.000Z" itemprop="datePublished">2022-07-31</time>
+	<a href="/2022/10/06/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/" class="article-date">
+	  <time datetime="2022-10-06T01:59:27.000Z" itemprop="datePublished">2022-10-06</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/PyTorch/" rel="tag">PyTorch</a>
+	<a class="article-tag-link-link" href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/" rel="tag">位运算</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/07/31/PyTorch%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/10/06/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 514(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 980(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 2(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 4(分)</span>
 	
 
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="1-安装anaconda"><a class="markdownIt-Anchor" href="#1-安装anaconda"></a> 1. 安装anaconda</h2>
-<p>前往Anaconda官网下载个人版(Individual Edition)：</p>
-<p><a target="_blank" rel="noopener" href="https://www.anaconda.com/products/individual">官网地址</a></p>
-<h2 id="2-添加清华镜像源"><a class="markdownIt-Anchor" href="#2-添加清华镜像源"></a> 2. 添加清华镜像源</h2>
-<p>由于PyTorch的服务器在国外，直连下载的话很慢，所以选用清华镜像源下载，步骤如下：</p>
-<ol>
-<li>点击开始菜单，进入Anaconda Prompt命令行</li>
-<li>在命令行中输入以下命令</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加清华镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line"><span class="comment"># 添加pytorch镜像</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/</span><br><span class="line"><span class="comment"># for legacy win-64</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/peterjc123/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes</span><br></pre></td></tr></table></figure>
-<h2 id="3-创建新的conda虚拟环境"><a class="markdownIt-Anchor" href="#3-创建新的conda虚拟环境"></a> 3. 创建新的conda虚拟环境</h2>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 其中pytorch为虚拟环境名称，可自定义。后面指定安装的python版本</span></span><br><span class="line">conda create --name pytorch python=<span class="number">3.8</span></span><br><span class="line"><span class="comment"># 激活 进入新环境</span></span><br><span class="line">activate pytorch</span><br></pre></td></tr></table></figure>
-<h2 id="4-安装pytorch"><a class="markdownIt-Anchor" href="#4-安装pytorch"></a> 4. 安装PyTorch</h2>
-<p>可先去官网选择合适的命令，粘贴至Anaconda Prompt命令行运行：</p>
-<p><a target="_blank" rel="noopener" href="https://pytorch.org/">官网地址</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch torchvision cudatoolkit=<span class="number">10.2</span></span><br></pre></td></tr></table></figure>
-<p>这里比官网的命令少了一个<code>-c pytorch</code>。<br />
-主要是因为<code>-c pytorch</code>表示指定使用pytorch channel，这个服务器位于国外，下载速度很慢，使用刚刚添加进default channel的清华镜像源可以得到一个较快的下载速度。</p>
-<h3 id="验证是否安装成功"><a class="markdownIt-Anchor" href="#验证是否安装成功"></a> 验证是否安装成功</h3>
-<p>在Python编译环境下输入代码并运行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import torch </span><br><span class="line">import torchvision</span><br></pre></td></tr></table></figure>
-<h2 id="5-配置pycharm"><a class="markdownIt-Anchor" href="#5-配置pycharm"></a> 5. 配置Pycharm</h2>
-<h3 id="51-安装pycharm"><a class="markdownIt-Anchor" href="#51-安装pycharm"></a> 5.1 安装Pycharm</h3>
-<p>前往Pycharm官网下载需要的版本，然后安装：</p>
-<p><a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/download/">官网地址</a></p>
-<h3 id="52-设置python-interpreter"><a class="markdownIt-Anchor" href="#52-设置python-interpreter"></a> 5.2 设置Python Interpreter</h3>
-<ol>
-<li>在主界面菜单File-&gt;Setting-&gt;Project:xxxx-&gt;Python Interpreter。</li>
-<li><code>Settings</code>界面，点击<code>齿轮</code>按钮，选择<code>Add</code>，会弹出添加界面。</li>
-<li>在添加界面左侧选择<code>Conda Environment</code>，右边选择<code>Existing environment</code>。</li>
-<li>再点击<code>...</code>按钮添加一个已经存在的<code>conda</code>虚拟环境，即刚刚构建的<code>pytorch</code>。</li>
-<li>选择<strong>Anaconda-&gt;envs-&gt;pytorch（刚刚创建的conda虚拟环境）-&gt;python.exe</strong>作为解释器。</li>
-<li>注意计算机中必须安装有VC执行环境，即：Microsoft Visual C++ 2015-2019 Redistributable(x64)。</li>
-</ol>
-<p>最后，PyTorch在Pycharm的环境就搭建完成了。</p>
+        <h2 id="1基础运算"><a class="markdownIt-Anchor" href="#1基础运算"></a> 1.基础运算</h2>
+<p>位运算的基础运算主要包括左移、右移、无符号右移、按位与、按位或、按位异或、按位非和赋值操作等。</p>
+<ul>
+<li>左移(&lt;&lt;)：无论是正数或者负数左移，均在最右侧补0</li>
+<li>右移(&gt;&gt;)：正数右移左侧补0，负数右移左侧补1</li>
+<li>无符号右移(&gt;&gt;&gt;)：无论是正数或者负数进行无符号右移，均在左侧补0</li>
+<li>按位与(&amp;)：两个二进制位进行按位与操作时，两个二进制位都为1时结果才为1，否则为0</li>
+<li>按位或(|)：两个二进制位进行按位或操作时，两个二进制位中有一个为1时结果就为1，否则为0</li>
+<li>按位异或(^)：两个二进制位进行按位异或操作时，只有两个二进制位相同的时候结果为0，否则为1</li>
+<li>按位非(~)：对二进制位进行按位非操作时，将二进制位的0变为1，将1变为0</li>
+<li>赋值操作
+<ul>
+<li>(&amp;=)：按位与赋值</li>
+<li>(|=)：按位或赋值</li>
+<li>(^=)：按位异或赋值</li>
+<li>(&lt;&lt;=)：左移赋值</li>
+<li>(&gt;&gt;=)：右移赋值</li>
+<li>(&gt;&gt;&gt;=)：无符号右移赋值</li>
+</ul>
+</li>
+</ul>
+<h2 id="2有趣的位运算小技巧"><a class="markdownIt-Anchor" href="#2有趣的位运算小技巧"></a> 2.有趣的位运算小技巧</h2>
+<p>1、利用位运算实现字符的大小写转换</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 通过按位或实现字符转小写</span></span><br><span class="line">        System.out.println((<span class="type">char</span>) (<span class="string">&#x27;a&#x27;</span> | <span class="string">&#x27; &#x27;</span>)); <span class="comment">// a</span></span><br><span class="line">        System.out.println((<span class="type">char</span>) (<span class="string">&#x27;A&#x27;</span> | <span class="string">&#x27; &#x27;</span>)); <span class="comment">// a</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 通过按位与实现字符转大写</span></span><br><span class="line">        System.out.println((<span class="type">char</span>) (<span class="string">&#x27;b&#x27;</span> &amp; <span class="string">&#x27;_&#x27;</span>)); <span class="comment">// B</span></span><br><span class="line">        System.out.println((<span class="type">char</span>) (<span class="string">&#x27;B&#x27;</span> &amp; <span class="string">&#x27;_&#x27;</span>)); <span class="comment">// B</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 通过按位异或实现字符大小写相互转换</span></span><br><span class="line">        System.out.println((<span class="type">char</span>) (<span class="string">&#x27;c&#x27;</span> ^ <span class="string">&#x27; &#x27;</span>)); <span class="comment">// C</span></span><br><span class="line">        System.out.println((<span class="type">char</span>) (<span class="string">&#x27;C&#x27;</span> ^ <span class="string">&#x27; &#x27;</span>)); <span class="comment">// c</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2、不使用临时变量实现交换两个数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 异或实现两个数的交换</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">1</span>, b = <span class="number">2</span>;</span><br><span class="line">        a ^= b;  <span class="comment">// a = a^b</span></span><br><span class="line">        b ^= a;  <span class="comment">// b = b^(a^b) = b^b^a = a</span></span><br><span class="line">        a ^= b;  <span class="comment">// a = (a^b)^a = a^a^b = b</span></span><br><span class="line">        System.out.println(a); <span class="comment">// 2</span></span><br><span class="line">        System.out.println(b); <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 利用加减法实现两个数的交换</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">1</span>, y = <span class="number">2</span>;</span><br><span class="line">        x = x + y;  <span class="comment">// x = x+y</span></span><br><span class="line">        y = x - y;  <span class="comment">// y = (x+y)-y = x+y-y = x</span></span><br><span class="line">        x = x - y;  <span class="comment">// x = (x+y)-x = x+y-x = y</span></span><br><span class="line">        System.out.println(x); <span class="comment">// 2</span></span><br><span class="line">        System.out.println(y); <span class="comment">// 1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3、判断两个数是否异号</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 判断两个数是否异号</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> -<span class="number">1</span>, b = <span class="number">2</span>;</span><br><span class="line">        System.out.println((a ^ b) &lt; <span class="number">0</span>); <span class="comment">// true</span></span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">3</span>, y = <span class="number">5</span>;</span><br><span class="line">        System.out.println((x ^ y) &lt; <span class="number">0</span>); <span class="comment">// false</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>4、位操作改变正负数符号</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// 位操作改变正负数符号</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> -<span class="number">3</span>, y = <span class="number">5</span>;</span><br><span class="line">        System.out.println(~x + <span class="number">1</span>); <span class="comment">// 3</span></span><br><span class="line">        System.out.println(~y + <span class="number">1</span>); <span class="comment">// -5</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>5、位操作求绝对值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        System.out.println(abs(<span class="number">0</span>));</span><br><span class="line">        System.out.println(abs(<span class="number">10</span>));</span><br><span class="line">        System.out.println(abs(-<span class="number">1</span>));</span><br><span class="line">        System.out.println(abs(-<span class="number">12</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 位操作求绝对值</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">abs</span><span class="params">(<span class="type">int</span> a)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> a &gt;&gt; <span class="number">31</span>;</span><br><span class="line">        <span class="keyword">return</span> ((a ^ i) - i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6、位操作判断奇数偶数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Demo</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        isEven(<span class="number">0</span>);</span><br><span class="line">        isEven(<span class="number">5</span>);</span><br><span class="line">        isEven(-<span class="number">1</span>);</span><br><span class="line">        isEven(-<span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 位操作判断奇数偶数</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">isEven</span><span class="params">(<span class="type">int</span> a)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> ((a &amp; <span class="number">1</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;偶数&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;奇数&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3算法中常用位运算"><a class="markdownIt-Anchor" href="#3算法中常用位运算"></a> 3.算法中常用位运算</h2>
+<p>1、异或操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a ^ <span class="number">0</span> = a </span><br><span class="line">a ^ a = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>2、消除n的二进制位中低位的1变为0</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n &amp; (n - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>3、将n的二进制位中的低位0变1</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n | (n + <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>4、将二进制中的任意位置置1或置0</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将第i位标记为1(从右往左数，下标从0开始)</span></span><br><span class="line">x |= <span class="number">1</span> &lt;&lt; i;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 将第i位标记为0(从右往左数，下标从0开始，原二进制位需为1)</span></span><br><span class="line">x ^= <span class="number">1</span> &lt;&lt; i;</span><br></pre></td></tr></table></figure>
+<p>5、判断第i位是否为0(从右往左，下标从0开始)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">((x &gt;&gt; i) &amp; <span class="number">1</span>) == <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -447,7 +457,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="https://mark-clinton.github.io/2022/07/31/PyTorch%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" title="PyTorch环境搭建" target="_blank" rel="external">https://mark-clinton.github.io/2022/07/31/PyTorch环境搭建/</a>
+      <a href="https://mark-clinton.github.io/2022/10/06/%E4%BD%8D%E8%BF%90%E7%AE%97%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/" title="位运算技巧总结" target="_blank" rel="external">https://mark-clinton.github.io/2022/10/06/位运算技巧总结/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -494,12 +504,12 @@
   <ul class="pager pull-left">
     
     <li class="prev">
-      <a href="/2022/09/27/Java%E5%AE%9E%E7%8E%B0%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="Java实现十大排序算法"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+      <a href="/2022/10/18/hello-world/" title="Hello World"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
     </li>
     
     
     <li class="next">
-      <a href="/2022/04/14/Docker%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" title="Docker基础知识"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+      <a href="/2022/09/27/Java%E5%AE%9E%E7%8E%B0%E5%8D%81%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" title="Java实现十大排序算法"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
     </li>
     
     
